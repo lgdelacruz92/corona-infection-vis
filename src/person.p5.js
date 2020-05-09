@@ -9,6 +9,8 @@ class Person {
         matter.Body.setAngularVelocity(this.body, 0);
         matter.World.add(world, this.body);
         this.s = s;
+        this.infected = false;
+        this.recoveryTime = 0;
     }
 
     draw() {
@@ -17,9 +19,20 @@ class Person {
             const curVelocity = this.body.velocity;
             matter.Body.setVelocity(this.body, { x: curVelocity.x * 1.3, y: curVelocity.y * 1.3});
             matter.Body.setAngularVelocity(this.body, 0);
-
         }
-        this.s.fill(255);
+
+        this.recoveryTime += 1;
+
+        if (this.recoveryTime > 1000) {
+            this.recoveryTime = 0;
+            this.infected = false;
+        }
+
+        if (this.infected) {
+            this.s.fill(227, 125, 125);
+        } else {
+            this.s.fill(125, 227, 135);
+        }
         this.s.circle(pos.x, pos.y, 20);
     }
 }
