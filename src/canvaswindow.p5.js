@@ -1,3 +1,3 @@
-const canvasWindow = { w: 400, h: 400};
+const canvasWindow = { w: window.innerWidth, h: window.innerHeight};
 
 export { canvasWindow};

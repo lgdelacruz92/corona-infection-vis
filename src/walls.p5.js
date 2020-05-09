@@ -4,9 +4,8 @@ class Wall {
     constructor(x, y, w, h, s, world) {
         this.body = matter.Bodies.rectangle(x + w/2, y + h/2, w, h);
         this.body.isStatic = true;
-        this.body.restitution = 0.1;
+        this.body.restitution = 0;
         matter.World.add(world, this.body);
-        console.log(this.body);
         this.s = s;
     }
 
