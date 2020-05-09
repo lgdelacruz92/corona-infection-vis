@@ -1,9 +1,9 @@
 import matter from 'matter-js';
 
 class Person {
-    constructor(x, y, s, e) {
+    constructor(x, y, s, world) {
         this.body = matter.Bodies.circle(x, y, 10);
-        matter.World.add(e.world, this.body);
+        matter.World.add(world, this.body);
         this.s = s;
     }
 
