@@ -29,7 +29,7 @@ const sketch = (s) => {
         rightWall = new Wall(canvasWindow.w, 0, 5, canvasWindow.h, s, world);
         topWall = new Wall(0, -5, canvasWindow.w, 5, s, world);
 
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 1000; i++) {
             people.push(new Person(s.random(canvasWindow.w - 10), s.random(canvasWindow.h - 10), s, world));
         }
 
